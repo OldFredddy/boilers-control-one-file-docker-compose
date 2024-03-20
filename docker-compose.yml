@@ -1,0 +1,19 @@
+version: '3'
+services:
+  java-app:
+    build:
+      context: ./java-app
+      dockerfile: DockerFile
+    ports:
+      - "8080:8080"
+
+  redis:
+    image: redis
+  mongo:
+    image: mongo
+  grafana:
+    image: grafana/grafana
+  go-app:
+    build:
+      context: ./go-app
+      dockerfile: Dockerfile
